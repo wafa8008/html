@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+    <html>
+     <head>
+     <meta charset="utf-8">
+     <title>rate me</title>
+	 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"rel="stylesheet">
+	 <link href="https://googleapis.com/css?family=Titleium+web:400,300,600"rel="stylesheet"type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	 
+	  <style type="text/css">
+
+         .nav {
+         background-color: #DEB887;
+         overflow: hidden;
+         }
+         .nav a {
+         float: left;
+         color: #f2f2f2;
+         text-align: center;
+         padding: 14px 16px;
+         text-decoration: none;
+         font-size: 17px;
+         }
+        .nav a:hover {
+        background-color: #DEB887;
+        color: black;
+        }
+        .nav a.active {
+        background-color: #FFF8DC;
+        color: white;
+        }
+		body{
+		background:url('target.png')no-repeat left center fixed;
+		
+		}
+		
+		
+		
+		.rating{
+		position:absolute;
+		top:50%;
+		left:50%;
+		transform:translate(-50%,-50%)rotateY(180deg);
+		display:flex;}
+		
+		
+		.rating input{
+		display:none;
+		}
+		
+		
+		.rating label{
+		display:block;
+		cursor:pointer;
+		width:50px;
+		}
+		
+		
+		.rating label:before{
+		content:'\f005';
+		font-family:fontAwesome;
+		position:relative;
+		display:block;
+		font-size:50px;
+		color:#101010;
+		}
+		
+		.rating label:after{
+		content:'\f005';
+		font-family:fontAwesome;
+		position:absolute;
+		display:none;
+		font-size:50px;
+		color:#1f9cff;
+		top:0;
+		opacity:0;
+		transition:.5s;
+		text-shadow:0 2px 5px rgba(0,0,0,.5);
+		}
+		.rating label:hover:after,
+		.rating label:hover ~ label:after,
+		.rating input:checked ~ label:after
+		
+		
+		{
+		opacity:1;
+		}
+		
+		*{box-sizing:border-box;
+		margin:0px;
+		padding:0px;}
+		
+		a{text-decoration:none;
+		color:black;
+		transition:.5s ease;}
+		
+		
+		a:hover{color:#179b77;}
+		
+		
+		.form{padding:40px;
+		max-width:400px;
+		margin:36px right;
+		border-raduis:4px;
+		box-shadow:0 4px 12px 4px rgba(19,35,47,0.3);
+		transition:.5s ease;}
+		
+		
+		.form:hover{box-shadow:0px 0px 46px 16px rgba(18,18,18,1.00);}
+		
+		.tab-group{list-style:none;
+		padding:0;
+		margin:0 0 46px 0;}
+		
+		
+		.tab-group:after{
+		content:"";
+		display:table;
+		clear:both;}
+		
+		
+		.tab-group{
+		display:none;
+		text-decoration:none;
+		padding:30px;
+		background:#000;
+		color:#fff;
+		font-size:20px;
+		float:right;
+		width:30%;
+		text-align:center;
+		cursor:pointer;
+		transition:.5s ease;.tab-group li a:hover{
+		background:#179b77;
+		color:#ffffff;
+		}
+		
+		.tab-group.active a{
+		background:#lab188;
+		color:none;
+		}
+		
+		.tab-content >div:last-child{
+		display:none;}
+		
+		
+		h1{text-align:center;
+		color:black;
+		font-weight:300;
+		margin:0 0 40px;}
+		  
+		  
+		  label{position:absolute;
+		  transform:translateY(50px);
+		  left:13px;
+		  color:rgba(255,255,255,0.7);
+		  transition:all 0.25s ease;
+		  pointer-events:none;
+		  font-size:22px;}
+		  
+		  
+		  label.req{
+		  margin:2px;
+		  color:black;
+		  }
+		  
+		  label.active{
+		  transform:translateY(50px)
+		  left:8px;
+		  font-size:14px;
+		  }
+		  label.highlight{
+		  color:#000;
+		  margin-top:-16px;}
+		  label.active.req{opacity:0;}
+		  
+		  input{font-size:22px;
+		  display:block;
+		  width:100%;
+		  height:100%;
+		  padding:5px 16px;
+		  background:none;
+		  background-image:none;
+		  border:1px solid #fff;
+		  color:#fff;
+		  border-raduis:0;
+		  transition:border-color .25s ease, box-shadow .25s ease;
+		  }
+		  
+		  
+		  input-focus{
+		  outline:0;
+		  border-color:#fff;
+		  }
+		  .field-wrap{
+		  position:relative;
+		  margin-bottom:14px;}
+		  
+		  .top-row:after{
+		  content:"";
+		  display:table;
+		  clear:both;}
+		  
+		  .top-row >div{
+		  float:left;
+		  width:48%;
+		  margin-right:4%;}
+		  
+		  .top-row > div:last-child{
+		  margin:0;}
+		  .button{
+		  border:0;
+		  outline:none;
+		  border-raduis:0;
+		  padding:15px 0;
+		  font-size:2rem;
+		  font-weight:600;
+		  text-transform:uppercase;
+		  letter-spacing:.1em;
+		  background:#lab188;
+		 color:#ffffff;
+		 transition:all 0.5s ease;
+		  }
+		  
+		  .button:hover:focus{background:#179b77;
+		  }
+		  .button-block{display:block;
+		  width:100%;
+		  }
+		  
+		  
+		  .forgot{margin-top:-20px;
+		  text-align:right;
+		  margin-bottom:10px;}
+		  
+		  
+		  
+		  
+		
+		
+		
+		
+		
+		
+		
+		</style>
+	 
+	
+
+     </head><body>
+
+    <div class="nav">
+    <a class="nav" href="home.html">Home</a>
+    <a href="crazyfashion.html">crazyfashion</a>
+    <a href="decor.html">decor</a>
+    
+    <a href="game.html">game</a>	 </div>
+	
+	<div class="rating">
+	<input type="radio" name="star" id="star1"><label for="star1"></label>
+	<input type="radio" name="star" id="star2"><label for="star2"></label>	
+	<input type="radio" name="star" id="star3"><label for="star3"></label>
+	<input type="radio" name="star" id="star4"><label for="star4"></label>
+	<input type="radio" name="star" id="star5"><label for="star5"></label>
+     </div>
+	 
+	 
+	 <div class ="form">
+	 
+	 <ul class="tab-group">
+	   
+	   <li class="tab-active"><a href="#singup">Sing up</a></li>
+	   <li class="tab"><a href="#login"></a></li>Log In</ul>
+	   
+	   <div class="tab-content">
+	   <div id="singup">
+	   <h1>Sing up</h1>
+	   
+	  <form action=""method="post">
+	  <div class="top-row">
+	  <div class="field-wrap">
+	 
+	 <label>first name<span class="req">*</span></label>
+	 <input type="text"required autocomplete="off"/>
+	 </div>
+	 <div class="field-wrap">
+	 <label>last name<span class="req">*</span>
+	 </label>
+	 <input type="text"required autocomplete="off"/>
+	 </div>
+	 </div>
+	 <div class="field-wrap">
+	 <label>email address<span class="req">*</span>
+	 </label>
+	 <input type="email"required autocomplete="off"/></div>
+	 <div class="field-wrap">
+	 <label>set a password<span class="req">*</span></label>
+	 <input type="password"required autocomplete="off"/></div>
+	 <button type="submit" class="button button-bock"/>Get Started</button></form>
+	 </div>
+	 <div id="login">
+	 <h1>welcome back!</h1>
+	 <form action="/" method="post">
+	 <div class="field-wrap"><label>email address<span class="req">*</span></label>
+	 <input type="email"required autocomplete="off"/></div>
+	 <div class="field-wrap">
+	 <label>password<span class="req">*</span></label>
+	 <input type="password"required autocomplete="off"/></div>
+<p class="forgot"><a href="#">forgot password?</a></p>
+<button class=" button button-bock"/>Log In</button></form></div></div></div> 
+	  
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"</script>
+<script src="js/index.js"></script>	
+	 
+	 
+	 
+	 
+
+    </body></html>
