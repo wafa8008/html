@@ -1,0 +1,128 @@
+  <!DOCTYPE html>
+    <html>
+	
+    <head><meta charset="uft-8">
+	<title>game</title>
+	
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+    body{width:100%;height:100%;overflow:heddin;}
+
+
+ .game{background-color:rgb(237,198,242);
+      border-raduis:100px 100px 0px  0px;
+      height:100%;
+      width:10%;
+      position:absolute;
+      top:100%;
+      background-image:url(game.bmp);
+      background-size:100%;
+	  background-repeat:no-repeat;
+      }
+.left_ear{
+          background-color:rgb(237,198,242);
+          border-raduis:100px;
+          position:absolute;
+          float:left;
+		  right:70%;
+          min-width:70%;
+          padding-top:40%;
+          z-index:-1;}
+.right_ear{
+          background-color:rgb(237,198,242);
+          border-raduis:100px;
+          position:absolute;
+          left:80px;
+          float:right;
+          min-width:70%;
+          padding-top:40%;
+          left:70%;
+		  z-index:-1;
+}
+.try-again a{color:black;}
+#mall1{left:10%;}
+#mall2{left:45%;}
+#mall3{left:80%;}
+.score{font-family:arial;font-size:5em;position:absolute;right:5%;z-index:-3;}
+
+</style>
+
+
+<script>
+$(document).ready(function(){
+var add=0;
+function game_over(){
+$(".game").animate({top:'100%'},300);
+$(".score").html("Game Over");
+$(".score").append("<div class="try-again">try-again</div>");
+
+
+
+
+
+}
+
+
+
+
+function start(){
+add=0;
+$(".score").html("Score: " + add);
+
+
+
+$(".game").animate({top:'0%'},5000,function(){
+$(".game").animate({top:'100%'},300);
+$(".score").html("Game Over");
+$(".score").append("<div class="try-again">try-again</div>");
+    game_over();
+$(.try-again).click(function(){start();
+}
+
+}
+
+
+$(.game).hover(function(){
+$(this).css("background-image","url(dress55.bmp)");
+
+
+$(this).stop().animate({top:'100%'},300,function(){
+    add=add-(-1);
+$(".score").html("Score: " + add);
+$(this).css("background-image","url(game.bmp)");
+
+$(this).animate({top:'0%'},5000);
+
+});
+});
+
+
+
+}
+start();
+
+}
+
+
+
+
+</script>
+</head>
+<body>
+ 
+      <div class="score">score:0</div>
+
+     <div class ="game"id="mall1">
+	 <div class="left_ear"></div>
+	 <div class="right_ear" ></div>
+     </div>
+     <div class ="game"id="mall2">
+	 <div class="left_ear"></div>
+	 <div class="right_ear" ></div></div>
+     <div class ="game"id="mall3">
+	 <div class="left_ear"></div>
+	 <div class="right_ear" ></div></div>
+
+</body>
+</html>
